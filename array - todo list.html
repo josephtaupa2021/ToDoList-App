@@ -96,8 +96,6 @@
 
 
         function addItem() {
-            output.innerHTML = "";
-
             let itemList = document.getElementById("itemList").value;
             document.getElementById("itemList").value = "";
             if (itemList === "") {
@@ -131,12 +129,28 @@
         document.addEventListener("keydown", (event) => {
             if (event.which === 13) {
                 addItem();
+                document.querySelector('#addItem').style.cssText = " background-color: rgb(182, 182, 182); color: white;"
+            }
+        })
+        document.addEventListener("keyup", (event) => {
+            if (event.which === 13) {
+                addItem();
+                document.querySelector('#addItem').style.cssText = " background-color: white; color: black;"
             }
         })
 
         document.addEventListener("keydown", (event) => {
             if (event.which === 46) {
                 clearItem();
+                document.querySelector('#clearItem').style.cssText = " background-color: rgb(182, 182, 182); color: white;"
+            }
+        })
+
+        document.addEventListener("keyup", (event) => {
+            if (event.which === 46) {
+                clearItem();
+                document.querySelector('#clearItem').style.cssText = " background-color: white; color: black;"
+
             }
         })
     </script>
